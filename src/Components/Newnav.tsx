@@ -11,6 +11,7 @@ const Newnav = ({button} : {button: string}) => {
   const handleDropdownToggle = () => {
     SetDropdown(!dropdown);
   };
+ 
   
  
   return (
@@ -38,7 +39,7 @@ const Newnav = ({button} : {button: string}) => {
                     <span className="ml-1">▼</span>
                   </button>
                   {dropdown && (
-                    <ul className="absolute bg-black text-white mt-2 w-40 rounded-md shadow-lg">
+                    <ul className="absolute bg-black text-white mt-5 w-32  rounded-md shadow-lg z-[1]">
                       <li className="px-2 py-2 hover:bg-[#0a192f] text-white">
                         <Link className='text-white' to="">Sublink 1</Link>
                       </li>
@@ -67,10 +68,10 @@ const Newnav = ({button} : {button: string}) => {
 
         <div className="md:hidden flex items-center">
           <img
-            className="p-4 cursor-pointer"
+            className="p-4 cursor-pointer animate-pulse"
             src={toggle ? close : menu}
             alt="Menu Icon"
-            onClick={() => setToggle((prev) => !prev)}
+            onClick={() => setToggle((prev) => !prev) }
           />
         </div>
 
