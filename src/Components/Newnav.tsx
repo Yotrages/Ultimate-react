@@ -74,19 +74,22 @@ const Newnav = ({button} : {button: string}) => {
           />
         </div>
 
-        {toggle && (
-          <div className="md:hidden absolute top-[80px] right-0 w-full bg-[#00040f] rounded-md z-[1]">
-            <ul className="flex flex-col items-start p-4 space-y-4 transition duration-1000 ease-in-out">
-              {navLinks.map((navlink, index) => (
-                <li key={index} className="text-[18px] text-[#5ce1e6]">
-                  <Link to={navlink.path} onClick={() => setToggle(false)}>
-                    {navlink.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div 
+  className={`md:hidden absolute top-[80px] right-0 w-full bg-[#00040f] rounded-md z-[1] transition-all duration-[1.5s] ease-in-out ${
+    toggle ? 'max-h-[300px]' : 'max-h-0 opacity-0 overflow-hidden'
+  }`}
+>
+  <ul className="flex flex-col items-start p-4 space-y-4">
+    {navLinks.map((navlink, index) => (
+      <li key={index} className="text-[18px] text-[#5ce1e6]">
+        <Link to={navlink.path} onClick={() => setToggle(false)}>
+          {navlink.title}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
       </div>
     </nav>
   );
