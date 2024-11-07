@@ -53,13 +53,14 @@ const Newnav = ({button} : {button: string}) => {
                 </div>
               ) : (
                 <Link to={navlink.path}>{navlink.title}</Link>
-              )}            </li>
+              )}            
+              </li>
           ))}
         </ul>
 
           <div className='flex flex-row items-center justify-between'>
               <input type="text" placeholder='search here' className='rounded-lg p-3 text-black md:block hidden mr-1' />
-                      <button className='rounded-md bg-blue-gradient py-3 px-3 text-[16px] md:block hidden items-center text-black font-poppins'>
+                      <button className='rounded-md bg-blue-gradient py-3 px-3 text-[16px] md:block hidden items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black font-poppins'>
                    {button}
                     </button>
           </div>
@@ -74,8 +75,8 @@ const Newnav = ({button} : {button: string}) => {
         </div>
 
         {toggle && (
-          <div className="md:hidden absolute top-[80px] right-0 w-full bg-[#00040f] rounded-md transition-all duration-[3s] z-[1]">
-            <ul className="flex flex-col items-start p-4 space-y-4">
+          <div className="md:hidden absolute top-[80px] right-0 w-full bg-[#00040f] rounded-md z-[1]">
+            <ul className="flex flex-col items-start p-4 space-y-4 transition duration-1000 ease-in-out">
               {navLinks.map((navlink, index) => (
                 <li key={index} className="text-[18px] text-[#5ce1e6]">
                   <Link to={navlink.path} onClick={() => setToggle(false)}>

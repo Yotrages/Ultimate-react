@@ -5,7 +5,6 @@ import Business from './Business'
 import Clients from './Clients'
 import Newnav from './Newnav'
 import Footer from './Footer'
-import Testimonials from './Testimonials'
 import Hero from './Hero'
 import Newhero from './Newhero'
 import Stats from './Stats'
@@ -21,7 +20,6 @@ export {
     Business,
     Clients,
     Footer,
-    Testimonials,
     Hero,   
     Newnav,
     Newhero,
